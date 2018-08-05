@@ -1,0 +1,28 @@
+Sleep-Options:
+    # This switches between percentage mode and count mode.
+    # Percentage mode changes the day when the percentage value is meet or higher than the one set at Count-Percentage.
+    # Count mode changes the day when the count of player that sleep is meet or higher than the one set at Count-Percentage.
+    usePercentage: false
+    
+    # Percentage / Count requiered to change the day.
+    # Don't add % , just use integer.
+    # (eg: Count-Percentage: 50 , that means 50% whem usePercentage is true)
+    Count-Percentage: 1
+    
+# For messages you can use colors(eg:&e = Yellow, &a = Green). Colors work for both Broadcast and Wakeup-Message.
+# Other Parameters:
+# {PLAYER} = Display player name.
+# {COUNTMAX} = Players count / Players percentage requiered to change the time to day. (only works for Sleep-Broadcast)
+# {COUNTREQ} = Current players count / Current players percentage that sleep. (only works for Sleep-Broadcast)
+#
+# For no messages just leave the brakets blank.
+# (eg: Player-Wakeup-Message: '')
+Message-Options:
+    # Broadcast message when someone goes to sleep.
+    Sleep-Broadcast:
+        - '{PLAYER} &ewent to bed. Sweet Dreams~'
+        - 'Players sleeping {COUNTREQ}/{COUNTMAX}'
+    
+    # Message that only the player that wakes up sees.
+    Player-Wakeup-Message: '&aWAKEY, WAKEY!'
+    
