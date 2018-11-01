@@ -57,6 +57,7 @@ public class SleepListener implements Listener{
 		Sleeping++;
 		PercentageVal = (Sleeping * 100.00f) / server.getOnlinePlayers().size();	
 		
+		
 		// Broadcast message displaying for all the players.
 		if(!Percentage) {
 		for (String s : Broadcast) {
@@ -64,7 +65,7 @@ public class SleepListener implements Listener{
 		}
 		} else{
 			for (String s : Broadcast) {
-				player.getServer().broadcastMessage(Parse(s,Sleeping));
+				player.getServer().broadcastMessage(Parse(s,PercentageVal));
 			}
 		}
 		
@@ -120,7 +121,7 @@ public class SleepListener implements Listener{
 	
 	public String Parse(String _str, float Sleep) {
 		String str = ChatColor.translateAlternateColorCodes('&', _str);
-		return str.replace("{PLAYER}", player.getDisplayName()).replace("{COUNTREQ}", String.valueOf(Sleep)).replace("{COUNTMAX}", String.valueOf(Count) );
+		return str.replace("{PLAYER}", player.getDisplayName()).replace("{COUNTREQ}", String.valueOf(Sleep)).replace("{COUNTMAX}", String.valueOf((float)Count) );
 	}
 	
 	public String Parse(String _str, int Sleep) {
